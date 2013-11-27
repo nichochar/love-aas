@@ -20,8 +20,16 @@ def handle_404(request, response, exception):
             }
     response.out.write(template.render('templates/main_template.html', template_values))
 
+def handle_500(request, response, exception):
+    template_values = {
+            'message':'500 server error. Oh NO! Nobody loves a 500!',
+            'signature':'The LoveMaster'
+            }
+    response.out.write(template.render('templates/main_template.html', template_values))
+
 app = webapp2.WSGIApplication(
         api_routes,
         debug=True,
 )
 app.error_handlers[404] = handle_404
+app.error_handlers[500] = handle_500
