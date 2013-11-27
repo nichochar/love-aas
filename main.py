@@ -28,8 +28,6 @@ class BaseHandler(webapp2.RequestHandler):
     def render_template(self, filename, **template_args):
         self.response.write(self.jinja2.render_template(filename, **template_args))
 app = webapp2.WSGIApplication(
-    [
-        routes.PathPrefixRoute('/api', api_routes),
-    ],
-    debug=True
+        api_routes,
+        debug=True,
 )

@@ -17,6 +17,4 @@ class Love(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        #path = os.path.join(os.path.dirname(__file__), 'main_template.html')
-
         self.response.out.write(template.render('templates/main_template.html', template_values))
