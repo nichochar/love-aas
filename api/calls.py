@@ -91,3 +91,93 @@ class Thank(webapp2.RequestHandler):
                 }
 
         self.response.out.write(template.render('templates/main_template.html', template_values))
+
+class Request(webapp2.RequestHandler):
+    def get(self, to_user,from_user):
+        """
+        Ask someone if they love you
+        """
+
+        message = "Hey {to_user}, do you love me!?".format(to_user=to_user)
+        signature = from_user
+        template_values = {
+                'message':message,
+                'signature':signature,
+                }
+
+        self.response.out.write(template.render('templates/main_template.html', template_values))
+
+class Reply(webapp2.RequestHandler):
+    def get(self, to_user,from_user):
+        """
+        Reply to someone who told you they loved you
+        """
+
+        message = "I love you too {to_user}!".format(to_user=to_user)
+        signature = from_user
+        template_values = {
+                'message':message,
+                'signature':signature,
+                }
+
+        self.response.out.write(template.render('templates/main_template.html', template_values))
+
+class Kiss(webapp2.RequestHandler):
+    def get(self, to_user,from_user):
+        """
+        Tell someone you want to smooch them
+        """
+
+        message = "I want to kiss you all over! I'm so into smooching with you, {to_user}".format(to_user=to_user)
+        signature = from_user
+        template_values = {
+                'message':message,
+                'signature':signature,
+                }
+
+        self.response.out.write(template.render('templates/main_template.html', template_values))
+
+class Cuddle(webapp2.RequestHandler):
+    def get(self, to_user,from_user):
+        """
+        Tell someone you want to cuddle with them
+        """
+
+        message = "I want to cuddle with you so bad, {to_user}".format(to_user=to_user)
+        signature = from_user
+        template_values = {
+                'message':message,
+                'signature':signature,
+                }
+
+        self.response.out.write(template.render('templates/main_template.html', template_values))
+
+class Crush(webapp2.RequestHandler):
+    def get(self, to_user,from_user):
+        """
+        Tell someone you have a crush
+        """
+
+        message = "I can't keep it in anymore, {to_user}. I have a HUGE crush on you!".format(to_user=to_user)
+        signature = from_user
+        template_values = {
+                'message':message,
+                'signature':signature,
+                }
+
+        self.response.out.write(template.render('templates/main_template.html', template_values))
+
+class Thanksgiving(webapp2.RequestHandler):
+    def get(self, to_user,from_user):
+        """
+        Wish a happy thanksgiving to someone!
+        """
+
+        message = "Happy ThanksGiving, {to_user}!".format(to_user=to_user)
+        signature = from_user
+        template_values = {
+                'message':message,
+                'signature':signature,
+                }
+
+        self.response.out.write(template.render('templates/main_template.html', template_values))

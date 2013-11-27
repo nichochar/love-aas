@@ -1,8 +1,17 @@
 body {
   margin: 0px 40px;
-  padding:10px;
+  padding:20px 10px;
   background-color: #F5DAEB;
   font: 1em "PT Sans", Helvetica, "Lucida Grande", Arial;
+}
+
+a {
+  color:#443799;
+  font-weight:bold;
+}
+
+a:hover {
+  color:#4B466E;
 }
 
 #hearts {
