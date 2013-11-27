@@ -1,25 +1,77 @@
 body {
-  margin: 40px;
+  margin: 0px 40px;
   padding:10px;
   background-color: #F5DAEB;
+  font: 1em "PT Sans", Helvetica, "Lucida Grande", Arial;
 }
 
-#footer {
-  padding-top:100px;
+#hearts {
+  padding-top:20px;
   text-align:center;
 }
+
+#title {
+  padding:70px 10px;
+  background-color:#E30544;
+  color: #F5DAEB;
+  font-weight:bold;
+  border-radius: 8px;
+}
+
+#title h1, #title h2{
+  padding:0px 20px;
+  margin:0px 20px;
+  height:60px;
+}
+
+#title h1{
+  font-size:3em;
+}
+
+#title h2{
+  font-size:2em;
+}
+
+#version {
+  padding-left: 40px;
+  font: 0.8em "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-style:italic;
+  font-weight:normal;
+}
+
+#main-body {
+  margin: 20px;
+  color: #E30544;
+}
+
+#main-body h1{
+  font-size:2em;
+}
+
+#main-body h2{
+  font-size:1.5em;
+  padding-left:0;
+  margin-left:0;
+}
+
+#main-body p {
+  margin-top:0;
+  margin-bottom:0;
+  color:#000000;
+}
+
 
 #message {
   background-color:#E30544;
   color: #F5DAEB;
   padding:40px 40px;
-  font: 4em "PT Sans", Helvetica, "Lucida Grande", Arial;
+  font-size: 3em;
   font-weight:bold;
   border-radius: 8px;
 }
 
 #signature {
   padding:0px 40px;
-  font: 2em "PT Sans", Helvetica, "Lucida Grande", Arial;
+  font-size:2em;
   font-style:italic;
 }
