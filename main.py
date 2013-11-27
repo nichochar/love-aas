@@ -15,11 +15,21 @@
 # limitations under the License.
 #
 import webapp2
+import logging
+from webapp2_extras import routes
 
-class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('Hello world!')
+from api.urls import routes as api_routes
 
-app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+class BaseHandler(webapp2.RequestHandler):
+    @webapp2.cached_property
+    def jinja2(self):
+        return jinja2.get_jinja2(app=self.app)
+
+    def render_template(self, filename, **template_args):
+        self.response.write(self.jinja2.render_template(filename, **template_args))
+app = webapp2.WSGIApplication(
+    [
+        routes.PathPrefixRoute('/api', api_routes),
+    ],
+    debug=True
+)

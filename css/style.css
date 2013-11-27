@@ -1,0 +1,25 @@
+body {
+  margin: 20px;
+  padding:10px;
+  background-color: #F5DAEB;
+}
+
+#footer {
+  padding-top:100px;
+  text-align:center;
+}
+
+#message {
+  background-color:#E30544;
+  color: #F5DAEB;
+  padding:0 10px;
+  font: 4em "PT Sans", Helvetica, "Lucida Grande", Arial;
+  font-weight:bold;
+  border-radius: 8px;
+}
+
+#signature {
+  padding:0px 40px;
+  font: 2em "PT Sans", Helvetica, "Lucida Grande", Arial;
+  font-style:italic;
+}
