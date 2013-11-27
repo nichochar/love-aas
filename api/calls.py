@@ -46,3 +46,48 @@ class Miss(webapp2.RequestHandler):
                 }
 
         self.response.out.write(template.render('templates/main_template.html', template_values))
+
+class Snapchat(webapp2.RequestHandler):
+    def get(self, to_user, from_user):
+        """
+        Spreads the snapchat urge 
+        """
+
+        message = "Hi {to_user}, in the name of love, snapchat me!".format(to_user=to_user)
+        signature = from_user
+        template_values = {
+                'message':message,
+                'signature':signature,
+                }
+
+        self.response.out.write(template.render('templates/main_template.html', template_values))
+
+class Everyone(webapp2.RequestHandler):
+    def get(self, from_user):
+        """
+        Spreads the snapchat urge 
+        """
+
+        message = "I love everyone!"
+        signature = from_user
+        template_values = {
+                'message':message,
+                'signature':signature,
+                }
+
+        self.response.out.write(template.render('templates/main_template.html', template_values))
+
+class Thank(webapp2.RequestHandler):
+    def get(self, what,from_user):
+        """
+        Spreads the snapchat urge 
+        """
+
+        message = "Thank you for {what}.".format(what=what)
+        signature = from_user
+        template_values = {
+                'message':message,
+                'signature':signature,
+                }
+
+        self.response.out.write(template.render('templates/main_template.html', template_values))
