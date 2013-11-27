@@ -173,7 +173,7 @@ class Thanksgiving(webapp2.RequestHandler):
         Wish a happy thanksgiving to someone!
         """
 
-        message = "Happy ThanksGiving, {to_user}!".format(to_user=to_user)
+        message = "Happy Thanksgiving, {to_user}!".format(to_user=to_user)
         signature = from_user
         template_values = {
                 'message':message,
