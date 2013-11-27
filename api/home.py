@@ -1,5 +1,4 @@
 import webapp2
-from webapp2_extras import jinja2
 from google.appengine.ext.webapp import template
 
 
