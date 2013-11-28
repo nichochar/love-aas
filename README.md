@@ -3,7 +3,7 @@ LOVEaas
 
 API to spread the love! Use it at www.loveaas.com:
 
-http://loveas.com/everyone/LoveMaster
+http://loveaas.com/everyone/LoveMaster
 
 Introduction
 ============
