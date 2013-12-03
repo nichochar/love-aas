@@ -181,3 +181,18 @@ class Thanksgiving(webapp2.RequestHandler):
                 }
 
         self.response.out.write(template.render('templates/main_template.html', template_values))
+
+class Owe(webapp2.RequestHandler):
+    def get(self, to_user,from_user):
+        """
+        Wish a happy thanksgiving to someone!
+        """
+
+        message = "Happy Thanksgiving, {to_user}!".format(to_user=to_user)
+        signature = from_user
+        template_values = {
+                'message':message,
+                'signature':signature,
+                }
+
+        self.response.out.write(template.render('templates/main_template.html', template_values))
