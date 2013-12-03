@@ -188,7 +188,7 @@ class Owe(webapp2.RequestHandler):
         Wish a happy thanksgiving to someone!
         """
 
-        message = "Happy Thanksgiving, {to_user}!".format(to_user=to_user)
+        message = "I owe you one {to_user}!".format(to_user=to_user)
         signature = from_user
         template_values = {
                 'message':message,
