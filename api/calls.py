@@ -1,6 +1,7 @@
 import webapp2
-from webapp2_extras import jinja2
 from google.appengine.ext.webapp import template
+import urllib
+import logging
 
 class Love(webapp2.RequestHandler):
     def get(self, to_user, from_user):
