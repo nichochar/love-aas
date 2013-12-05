@@ -18,6 +18,7 @@ def handle_404(request, response, exception):
             'message':'404 not found. Oh NO! Nobody loves a 404!',
             'signature':'The LoveMaster'
             }
+    logging.error(exception)
     response.out.write(template.render('templates/main_template.html', template_values))
 
 def handle_500(request, response, exception):
@@ -25,6 +26,7 @@ def handle_500(request, response, exception):
             'message':'500 server error. Oh NO! Nobody loves a 500!',
             'signature':'The LoveMaster'
             }
+    logging.error(exception)
     response.out.write(template.render('templates/main_template.html', template_values))
 
 app = webapp2.WSGIApplication(
