@@ -2,21 +2,34 @@ import webapp2
 from google.appengine.ext.webapp import template
 import urllib
 import logging
+from loveutils.response import LoveResponse
 
 class Love(webapp2.RequestHandler):
     def get(self, to_user, from_user):
         """
         Spreads the love from from_user to to_user
         """
+        request_accept = self.request.get('Accept')
+
 
         message = "Hi {to_user}, I love you".format(to_user=to_user)
         signature = from_user
-        template_values = {
-                'message':message,
-                'signature':signature,
-                }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        if request_accept == 'text/html':
+            template_values = {
+                    'message':message,
+                    'signature':signature,
+                    }
+
+            self.response.out.write(template.render('templates/main_template.html', template_values))
+
+        else:
+            return LoveResponse(
+                    status=200,
+                    message=message,
+                    signature=signature,
+                    accepts=request_accept,
+                    )
 
 class Like(webapp2.RequestHandler):
     def get(self, to_user, from_user):
