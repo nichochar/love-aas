@@ -84,3 +84,10 @@ a:hover {
   font-size:2em;
   font-style:italic;
 }
+
+.bottom-right {
+  float:right;
+  position:absolute;
+  bottom:10%;
+  right:60px;
+}
