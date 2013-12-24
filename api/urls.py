@@ -16,4 +16,6 @@ routes = [
         webapp2.Route(r'/crush/<to_user:([A-Za-z_\d]+ ?)+?>/<from_user:([A-Za-z_\d]+ ?)+?>', handler='api.calls.Crush', name='crush'),
         webapp2.Route(r'/thanksgiving/<to_user:([A-Za-z_\d]+ ?)+?>/<from_user:([A-Za-z_\d]+ ?)+?>', handler='api.calls.Thanksgiving', name='thanksgiving'),
         webapp2.Route(r'/owe/<to_user:([A-Za-z_\d]+ ?)+?>/<from_user:([A-Za-z_\d]+ ?)+?>', handler='api.calls.Owe', name='owe'),
+        webapp2.Route(r'/xmas/<to_user:([A-Za-z_\d]+ ?)+?>/<from_user:([A-Za-z_\d]+ ?)+?>', handler='api.calls.Xmas', name='xmas'),
+        webapp2.Route(r'/christmas/<to_user:([A-Za-z_\d]+ ?)+?>/<from_user:([A-Za-z_\d]+ ?)+?>', handler='api.calls.Xmas', name='xmas'),
 ]
