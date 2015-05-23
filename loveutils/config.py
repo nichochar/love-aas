@@ -5,3 +5,5 @@ webapp2_config = {
         },
     },
 }
+
+APP_VERSION = 0.3

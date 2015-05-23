@@ -1,6 +1,7 @@
 import webapp2
 from google.appengine.ext.webapp import template
 from loveutils import messages
+from loveutils import config
 
 
 MESSAGE_TEMPLATE_PATH = 'templates/message.html'
@@ -22,7 +23,6 @@ class Home(webapp2.RequestHandler):
         Home index page handler
         """
         message_list = []
-        print MESSAGES
         for key, value in MESSAGES.iteritems():
             to_user_exists = True if 'to_user' in value else False
             message_list.append({
@@ -31,8 +31,10 @@ class Home(webapp2.RequestHandler):
                 'formatted_message': value.format(to_user=':to_user')
             })
 
-        template_values = {'message_list': message_list}
-        print template_values
+        template_values = {
+            'message_list': message_list,
+            'app_version': config.APP_VERSION
+        }
         return self.response.out.write(
             template.render(HOME_TEMPLATE_PATH, template_values)
         )
