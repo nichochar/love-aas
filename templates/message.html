@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <p id="message">{{ message }}</p>
+  <br>
+  <p id="signature">-- {{ signature }}</p>
+
+  <div id="hearts">
+      <i class="fa fa-heart fa-5x"></i>
+      <i class="fa fa-heart-o fa-5x"></i>
+  </div>
+{% endblock %}
+{% block footer %}
+    <a href="/" class="bottom-right">Discover Love AAS, and send a message of love!</a>
+{% endblock %}
