@@ -2,16 +2,17 @@ body {
   margin: 0px 40px;
   padding:20px 10px;
   background-color: #F5DAEB;
-  font: 1em "PT Sans", Helvetica, "Lucida Grande", Arial;
+  font: 1.1em Helvetica, Futura, "PT Sans", Helvetica, "Lucida Grande", Arial;
 }
 
 a {
-  color:#443799;
+  color: #04AC68;
   font-weight:bold;
+  text-decoration: none
 }
 
 a:hover {
-  color:#4B466E;
+  color:#00693F;
 }
 
 #hearts {
@@ -34,7 +35,7 @@ a:hover {
 }
 
 #title h1{
-  font-size:3em;
+  font-size:3.5em;
 }
 
 #title h2{
@@ -54,27 +55,33 @@ a:hover {
 }
 
 #main-body h1{
-  font-size:2em;
+  font-size:2.2em;
+  margin-top: 0.9em;
+  margin-bottom: 0.2em;
 }
 
-#main-body h2{
-  font-size:1.5em;
-  padding-left:0;
-  margin-left:0;
+#main-body h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 #main-body p {
-  margin-top:0;
-  margin-bottom:0;
   color:#000000;
+  line-height: 1.5;
+  margin: 0;
+}
+
+#api-list p {
+    margin: 1em;
+    margin-left: 2em;
 }
 
 
 #message {
   background-color:#E30544;
   color: #F5DAEB;
-  padding:40px 40px;
-  font-size: 3em;
+  padding:35px;
+  font-size: 2.7em;
   font-weight:bold;
   border-radius: 8px;
 }
@@ -83,6 +90,7 @@ a:hover {
   padding:0px 40px;
   font-size:2em;
   font-style:italic;
+  font-weight: 100;
 }
 
 .bottom-right {
@@ -91,3 +99,15 @@ a:hover {
   bottom:10%;
   right:60px;
 }
+
+.mono {
+  color:#E30544;
+  display: inline; /* so the border doesn't become block */
+  font-family: 'Courier New', Courier;
+  border: 1px solid #E6B4D3;
+  background-color: #FDF5FA;
+  border-radius: 0.3em;
+  font-weight: 100;
+  padding: 0.1em 0.4em;
+}
+

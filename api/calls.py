@@ -1,8 +1,9 @@
 import webapp2
 from google.appengine.ext.webapp import template
-import urllib
-import logging
-from loveutils.response import LoveResponse
+
+
+MESSAGE_TEMPLATE_PATH = 'templates/message.html'
+
 
 class Love(webapp2.RequestHandler):
     def get(self, to_user, from_user):
@@ -12,32 +13,13 @@ class Love(webapp2.RequestHandler):
         message = "Hi {to_user}, I love you".format(to_user=to_user)
         signature = from_user
         template_values = {
-                'message':message,
-                'signature':signature,
-                }
+            'message': message,
+            'signature': signature,
+        }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
-        #request_accept = self.request.get('Accept')
+        view = template.render(MESSAGE_TEMPLATE_PATH, template_values)
+        return self.response.out.write(view)
 
-
-        #message = "Hi {to_user}, I love you".format(to_user=to_user)
-        #signature = from_user
-
-        #if request_accept == 'text/html':
-            #template_values = {
-                    #'message':message,
-                    #'signature':signature,
-                    #}
-
-            #self.response.out.write(template.render('templates/main_template.html', template_values))
-
-        #else:
-            #return LoveResponse(
-                    #status=200,
-                    #message=message,
-                    #signature=signature,
-                    #accepts=request_accept,
-                    #)
 
 class Like(webapp2.RequestHandler):
     def get(self, to_user, from_user):
@@ -52,7 +34,8 @@ class Like(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Miss(webapp2.RequestHandler):
     def get(self, to_user, from_user):
@@ -67,7 +50,8 @@ class Miss(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Snapchat(webapp2.RequestHandler):
     def get(self, to_user, from_user):
@@ -82,7 +66,8 @@ class Snapchat(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Everyone(webapp2.RequestHandler):
     def get(self, from_user):
@@ -97,10 +82,11 @@ class Everyone(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Thank(webapp2.RequestHandler):
-    def get(self, what,from_user):
+    def get(self, what, from_user):
         """
         Spreads the snapchat urge 
         """
@@ -112,10 +98,11 @@ class Thank(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Request(webapp2.RequestHandler):
-    def get(self, to_user,from_user):
+    def get(self, to_user, from_user):
         """
         Ask someone if they love you
         """
@@ -127,10 +114,11 @@ class Request(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Reply(webapp2.RequestHandler):
-    def get(self, to_user,from_user):
+    def get(self, to_user, from_user):
         """
         Reply to someone who told you they loved you
         """
@@ -142,10 +130,11 @@ class Reply(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Kiss(webapp2.RequestHandler):
-    def get(self, to_user,from_user):
+    def get(self, to_user, from_user):
         """
         Tell someone you want to smooch them
         """
@@ -157,10 +146,11 @@ class Kiss(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Cuddle(webapp2.RequestHandler):
-    def get(self, to_user,from_user):
+    def get(self, to_user, from_user):
         """
         Tell someone you want to cuddle with them
         """
@@ -172,10 +162,11 @@ class Cuddle(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Crush(webapp2.RequestHandler):
-    def get(self, to_user,from_user):
+    def get(self, to_user, from_user):
         """
         Tell someone you have a crush
         """
@@ -187,10 +178,11 @@ class Crush(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Thanksgiving(webapp2.RequestHandler):
-    def get(self, to_user,from_user):
+    def get(self, to_user, from_user):
         """
         Wish a happy thanksgiving to someone!
         """
@@ -202,10 +194,11 @@ class Thanksgiving(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Owe(webapp2.RequestHandler):
-    def get(self, to_user,from_user):
+    def get(self, to_user, from_user):
         """
         Tell someone you owe them!
         """
@@ -217,10 +210,11 @@ class Owe(webapp2.RequestHandler):
                 'signature':signature,
                 }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(template.render(MESSAGE_TEMPLATE_PATH, template_values))
+
 
 class Xmas(webapp2.RequestHandler):
-    def get(self, to_user,from_user):
+    def get(self, to_user, from_user):
         """
         Wish a happy christmas to someone!
         """
@@ -228,8 +222,10 @@ class Xmas(webapp2.RequestHandler):
         message = "A very merry Christmas, {to_user}!".format(to_user=to_user)
         signature = from_user
         template_values = {
-                'message':message,
-                'signature':signature,
-                }
+            'message': message,
+            'signature': signature,
+        }
 
-        self.response.out.write(template.render('templates/main_template.html', template_values))
+        self.response.out.write(
+            template.render(MESSAGE_TEMPLATE_PATH, template_values)
+        )
