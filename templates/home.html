@@ -24,34 +24,14 @@
         <h1>API</h1>
         <p> All urls begin with <span class="mono"> http://loveaas.com</span>
         <br>Use any of the available endpoints below:</p>
-        <h2 class="mono">/love/:to/:from</h2>
-        <p> <em>Hi :to, I love you. --:from</em></p>
-        <h2 class="mono">/xmas/:to/:from</h2>
-        <p> <em>Happy Christmas :to! --:from</em></p>
-        <h2 class="mono">/crush/:to/:from</h2>
-        <p> <em>I can't keep it in anymore, :to. I have a HUGE crush on you! --:from</em></p>
-        <h2 class="mono">/thanksgiving/:to/:from</h2>
-        <p> <em>Happy Thanksgiving, :to --:from</em></p>
-        <h2 class="mono">/snapchat/:to/:from</h2>
-        <p> <em>Hi :to, In the name of love, snapchat me! --:from</em></p>
-        <h2 class="mono">/miss/:to/:from</h2>
-        <p> <em>Hi :to, I miss you, so much. --:from</em></p>
-        <h2 class="mono">/like/:to/:from</h2>
-        <p> <em>Hi :to, I like you, like a lot. --:from</em></p>
-        <h2 class="mono">/everyone/:from</h2>
-        <p> <em>I love everyone! --:from</em></p>
-        <h2 class="mono">/thank/:what/:from</h2>
-        <p> <em>Thank you for :what. --:from</em></p>
-        <h2 class="mono">/request/:to/:from</h2>
-        <p> <em>Hey :to, do you love me!? --:from</em></p>
-        <h2 class="mono">/reply/:to/:from</h2>
-        <p> <em>I love you too :to! --:from</em></p>
-        <h2 class="mono">/kiss/:to/:from</h2>
-        <p> <em>I want to kiss you all over! I'm so into smooching with you, :to --:from</em></p>
-        <h2 class="mono">/cuddle/:to/:from</h2>
-        <p>  <em>I want to cuddle with you so bad, :to --:from</em></p>
-        <h2 class="mono">/owe/:to/:from</h2>
-        <p>  <em>I owe you one :to --:from</em></p>
+        {% for message in message_list %}
+            {% if message.to_user_exists %}
+                <h2 class="mono">/{{ message.key }}/:to/:from</h2>
+            {% else %}
+                <h2 class="mono">/{{ message.key }}/:from</h2>
+            {% endif %}
+            <p> <em>{{ message.formatted_message }} -- :from</em></p>
+        {% endfor %}
     </div>
 
     <h1 id="suggestion"> Submit a great idea? </h1>

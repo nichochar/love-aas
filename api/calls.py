@@ -1,8 +1,11 @@
 import webapp2
+import json
 from google.appengine.ext.webapp import template
 
 
 MESSAGE_TEMPLATE_PATH = 'templates/message.html'
+with open('messages.json') as data_file:
+    MESSAGES = json.load(data_file)
 
 
 class Love(webapp2.RequestHandler):
