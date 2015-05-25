@@ -5,13 +5,13 @@
 <div class="create">
     {% if message_part2 %}
         <form onsubmit="window.document.location.href= window.document.location.href.replace('/create', '') + '/' + document.getElementById('sender-input').value + '/' + document.getElementById('signature-input').value; return false;">
-        <p id="message">{{ message_part1 }} <input id="sender-input" onClick="this.setSelectionRange(0, this.value.length)" type="text" value="Recipient" /> {{ message_part2 }}</p>
+        <p id="message">{{ message_part1 }} <input id="sender-input" onClick="this.setSelectionRange(0, this.value.length)" type="text" placeholder="Recipient" required /> {{ message_part2 }}</p>
     {% else %}
         <form onsubmit="window.document.location.href= window.document.location.href.replace('/create', '') + '/' + document.getElementById('signature-input').value; return false;">
         <p id="message">{{ message_part1 }}</p>
     {% endif %}
     <br>
-    <p id="signature">-- <input id="signature-input" onClick="this.setSelectionRange(0, this.value.length)" type="text" value="Sender" /></p>
+    <p id="signature">-- <input id="signature-input" onClick="this.setSelectionRange(0, this.value.length)" type="text" placeholder="Sender" required/></p>
 
     <center><input type="Submit" id="submit-love" value="Spread the Love!"></center>
     <div id="hearts">

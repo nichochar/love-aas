@@ -13,21 +13,21 @@
 <div id="main-body">
     <h1>Introduction</h1>
     <p> LOVE-aas (Love As A Service) provides a modern, RESTful, scalable solution to the common problem spreading the love.
-    <br>Check out the <a href="#examples">examples</a>!
     </p>
-    <h1>How it works</h1>
+    <h1>Spread the Love Now</h1>
     <p>
-        Just type in your url bar any combination of the API keywords and then chose names
+        <a href="/create">Click here to get started</a>
         <br>
-        For example if <b>Julie</b> wants to send a crush message to <b>John</b>: just send him <a href="/crush/John/Julie">http://loveaas.com/crush/John/Julie</a> !</p>
+        You can also click on create next to any of the <a href="#api">API endpoints</a> below.
+        <br>
     <div>
-        <h1>API</h1>
+        <h1 id="api">API</h1>
         <p> All urls begin with <span class="mono"> http://loveaas.com</span>
-        <br>Use any of the available endpoints below:</p>
+        <br>Click on any of the available endpoints below:</p>
         <div id="api-list">
             {% for message in message_list %}
                 {% if message.to_user_exists %}
-                    <h2 class="mono">/{{ message.key }}/Recipient/Sender</h2>
+                <h2><a class="mono" href="/create/{{ message.key }}">/{{ message.key }}/Recipient/Sender</a></h2>
                 {% else %}
                     <h2 class="mono">/{{ message.key }}/Sender</h2>
                 {% endif %}

@@ -12,6 +12,16 @@ routes = [
         name='create1'
     ),
     webapp2.Route(
+        r'/create',
+        handler='api.handlers.CreateGuided',
+        name='create-guided'
+    ),
+    webapp2.Route(
+        r'/create/',
+        handler='api.handlers.CreateGuided',
+        name='create-guided-slash'
+    ),
+    webapp2.Route(
         r'/<key:([A-Za-z]+ ?)+?>/<user1:([A-Za-z_\d]+ ?)+?>/<user2:([A-Za-z_\d]+ ?)+?>',
         handler='api.handlers.Message',
         name='message2params'

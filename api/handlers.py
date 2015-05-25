@@ -7,6 +7,7 @@ from loveutils import config
 MESSAGE_TEMPLATE_PATH = 'templates/message.html'
 HOME_TEMPLATE_PATH = 'templates/home.html'
 CREATE_TEMPLATE_PATH = 'templates/create.html'
+CREATE_GUIDED_TEMPLATE_PATH = 'templates/create-guided.html'
 MESSAGES = messages.MESSAGES
 
 
@@ -110,4 +111,16 @@ class Create(webapp2.RequestHandler):
                 'message_part2': None
             }
         view = template.render(CREATE_TEMPLATE_PATH, template_values)
+        return self.response.out.write(view)
+
+
+class CreateGuided(webapp2.RequestHandler):
+    def get(self):
+        '''
+        Page that guides the user towards a specific Create Page
+        '''
+        template_values = {'messages': [key for key in MESSAGES]}
+        print template_values
+        print "\n\n"
+        view = template.render(CREATE_GUIDED_TEMPLATE_PATH, template_values)
         return self.response.out.write(view)

@@ -115,6 +115,12 @@ a:hover {
   padding: 0.1em 0.4em;
 }
 
+a.mono:hover {
+    color: #FDF5FA;
+    background-color: #E30544;
+    border: 1px solid #FDF5FA;
+}
+
 #create-h1 {
     color: #1c1e10;
     font-size: 2.7em;
@@ -127,7 +133,7 @@ a:hover {
     height: 2em;
     width: 6em;
     font-size: 0.8em;
-    font-weight: 100;
+    font-weight: bold;
     border-radius: 3px;
     text-align: center;
     padding: 0.3em;
@@ -141,6 +147,30 @@ a:hover {
 
 #submit-love {
     font-size: 1.5em;
+    font-weight: 100;
     height: 4em;
     width: 10em;
+}
+
+#create-list {
+    text-align: center;
+}
+
+#create-list table {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#create-list table td{
+    padding: 7px;
+    font-size: 2em;
+}
+
+#create-list h1 {
+    font-size: 3em;
+    color: #E30544;
+}
+
+.align-left {
+    float: left;
 }
