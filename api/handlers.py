@@ -24,11 +24,11 @@ class Home(webapp2.RequestHandler):
         """
         message_list = []
         for key, value in MESSAGES.iteritems():
-            to_user_exists = True if 'to_user' in value else False
+            recipient_exists = True if 'to_user' in value else False
             message_list.append({
                 'key': key,
-                'to_user_exists': to_user_exists,
-                'formatted_message': value.format(to_user=':to_user')
+                'to_user_exists': recipient_exists,
+                'formatted_message': value.format(to_user='Recipient')
             })
 
         template_values = {
