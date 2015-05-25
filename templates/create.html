@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1 id="create-h1"><i class="fa fa-heart-o"></i>&nbsp; Fill out the field{% if message_part2 %}s{% endif %} and spread the love! &nbsp;<i class="fa fa-heart"></i> </h1>
+
+<div class="create">
+    {% if message_part2 %}
+        <form onsubmit="window.document.location.href= window.document.location.href.replace('/create', '') + '/' + document.getElementById('sender-input').value + '/' + document.getElementById('signature-input').value; return false;">
+        <p id="message">{{ message_part1 }} <input id="sender-input" onClick="this.setSelectionRange(0, this.value.length)" type="text" value="Recipient" /> {{ message_part2 }}</p>
+    {% else %}
+        <form onsubmit="window.document.location.href= window.document.location.href.replace('/create', '') + '/' + document.getElementById('signature-input').value; return false;">
+        <p id="message">{{ message_part1 }}</p>
+    {% endif %}
+    <br>
+    <p id="signature">-- <input id="signature-input" onClick="this.setSelectionRange(0, this.value.length)" type="text" value="Sender" /></p>
+
+    <center><input type="Submit" id="submit-love" value="Spread the Love!"></center>
+    <div id="hearts">
+        <i class="fa fa-heart fa-5x"></i>
+        <i class="fa fa-heart-o fa-5x"></i>
+    </div>
+</div>
+{% endblock %}

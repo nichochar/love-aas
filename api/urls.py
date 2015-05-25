@@ -7,23 +7,26 @@ routes = [
         name='home'
     ),
     webapp2.Route(
+        r'/create/<key:(\w+)>',
+        handler='api.handlers.Create',
+        name='create1'
+    ),
+    webapp2.Route(
         r'/<key:([A-Za-z]+ ?)+?>/<user1:([A-Za-z_\d]+ ?)+?>/<user2:([A-Za-z_\d]+ ?)+?>',
         handler='api.handlers.Message',
-        name='message'
+        name='message2params'
     ),
     webapp2.Route(
         r'/<key:([A-Za-z]+ ?)+?>/<user1:([A-Za-z_\d]+ ?)+?>/<user2:([A-Za-z_\d]+ ?)+?>/',
         handler='api.handlers.Message',
-        name='message'
     ),
     webapp2.Route(
         r'/<key:([A-Za-z]+ ?)+?>/<user1:([A-Za-z_\d]+ ?)+?>',
         handler='api.handlers.Message',
-        name='message'
+        name='message1param'
     ),
     webapp2.Route(
-        r'/<key:([A-Za-z]+ ?)+?>/<user1:([A-Za-z_\d]+ ?)+?>/', 
-        handler='api.handlers.Message', 
-        name='message'
+        r'/<key:([A-Za-z]+ ?)+?>/<user1:([A-Za-z_\d]+ ?)+?>/',
+        handler='api.handlers.Message',
     ),
 ]

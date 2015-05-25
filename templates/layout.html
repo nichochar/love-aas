@@ -3,6 +3,25 @@
     <title>{% block title %}Love As A Service{% endblock %}</title>
     <meta name="description" content="Love As A Service (LOVEaas) provides a scalable, RESTful API to spread the love around the world.">
     <meta name='keywords' content='love as a service love api loveaas love-aas laas love-as-a-service spread love'>
+
+    {% block metatags %}
+        <!-- twitter cards -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="nichochar" />
+        <meta name="twitter:creator" content="nichochar" />
+        <meta name="twitter:title" content="Spread the Love with Love as a Service!" />
+        <meta name="twitter:description" content="You can also spread the Love! Come and visit http://loveaas.com" />
+        <meta name="twitter:image" content="http://loveaas.com/images/logo.png" />
+
+        <!-- Facebook Cards -->
+        <meta property="og:url"                content="http://loveaas.com" />
+        <meta property="og:type"               content="article" />
+        <meta property="og:title"              content="Spread the love!" />
+        <meta property="og:description"        content="There is no reason to not spread love everywhere!" />
+        <meta property="og:image"              content="http://loveaas.com/images/facebook.png" />
+    {% endblock %}
+
+    <!-- Stylesheets -->
    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
    <!--Analytics-->

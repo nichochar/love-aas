@@ -28,44 +28,44 @@ a:hover {
   border-radius: 8px;
 }
 
-#title h1, #title h2{
-  padding:0px 20px;
-  margin:0px 20px;
-  height:60px;
+#title h1, #title h2 {
+  padding: 0px 20px;
+  margin: 0px 20px;
+  height: 60px;
 }
 
-#title h1{
-  font-size:3.5em;
+#title h1 {
+  font-size: 3.5em;
 }
 
-#title h2{
+#title h2 {
   font-size:2em;
 }
 
 #version {
   padding-left: 40px;
   font: 0.8em "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-style:italic;
-  font-weight:normal;
+  font-style: italic;
+  font-weight: normal;
 }
 
-#main-body {
+#main-body, #create-body {
   margin: 20px;
   color: #E30544;
 }
 
-#main-body h1{
-  font-size:2.2em;
+#main-body h1, #create-body h1 {
+  font-size: 2.2em;
   margin-top: 0.9em;
   margin-bottom: 0.2em;
 }
 
-#main-body h2 {
+#main-body h2, #create-body h2 {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 
-#main-body p {
+#main-body p, #create-body p {
   color:#000000;
   line-height: 1.5;
   margin: 0;
@@ -106,12 +106,41 @@ a:hover {
 
 .mono {
   color:#E30544;
+  background-color: #FDF5FA;
   display: inline; /* so the border doesn't become block */
   font-family: 'Courier New', Courier;
   border: 1px solid #E6B4D3;
-  background-color: #FDF5FA;
   border-radius: 0.3em;
   font-weight: 100;
   padding: 0.1em 0.4em;
 }
 
+#create-h1 {
+    color: #1c1e10;
+    font-size: 2.7em;
+    text-align: center;
+}
+
+.create input {
+    color: #E30544;
+    background-color: #FDF5FA;
+    height: 2em;
+    width: 6em;
+    font-size: 0.8em;
+    font-weight: 100;
+    border-radius: 3px;
+    text-align: center;
+    padding: 0.3em;
+    transition: border 0.3s;
+}
+
+.create input[type="text"]:focus,
+.create input[type="text"].focus {
+  border: solid 9px #34495e;
+}
+
+#submit-love {
+    font-size: 1.5em;
+    height: 4em;
+    width: 10em;
+}

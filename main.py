@@ -1,9 +1,13 @@
 import webapp2
 import logging
 from google.appengine.ext.webapp import template
+from google.appengine.api.app_identity import get_default_version_hostname
 
 from api.urls import routes as api_routes
 MESSAGE_TEMPLATE_PATH = 'templates/message.html'
+
+PRODUCTION_SERVER = 'iluaas.appspot.com'
+is_production = get_default_version_hostname() == PRODUCTION_SERVER
 
 
 def handle_404(request, response, exception):
@@ -31,5 +35,7 @@ app = webapp2.WSGIApplication(
     api_routes,
     debug=True,
 )
-app.error_handlers[404] = handle_404
-app.error_handlers[500] = handle_500
+
+if is_production:
+    app.error_handlers[404] = handle_404
+    app.error_handlers[500] = handle_500
