@@ -20,18 +20,23 @@
         Just type in your url bar any combination of the API keywords and then chose names
         <br>
         For example if <b>Julie</b> wants to send a crush message to <b>John</b>: just send him <a href="/crush/John/Julie">http://loveaas.com/crush/John/Julie</a> !</p>
-    <div id="api-list">
+    <div>
         <h1>API</h1>
         <p> All urls begin with <span class="mono"> http://loveaas.com</span>
         <br>Use any of the available endpoints below:</p>
-        {% for message in message_list %}
-            {% if message.to_user_exists %}
-                <h2 class="mono">/{{ message.key }}/:to/:from</h2>
-            {% else %}
-                <h2 class="mono">/{{ message.key }}/:from</h2>
-            {% endif %}
-            <p> <em>{{ message.formatted_message }} -- :from</em></p>
-        {% endfor %}
+        <div id="api-list">
+            {% for message in message_list %}
+                {% if message.to_user_exists %}
+                    <h2 class="mono">/{{ message.key }}/Recipient/Sender</h2>
+                {% else %}
+                    <h2 class="mono">/{{ message.key }}/Sender</h2>
+                {% endif %}
+                <p> <i class="fa fa-quote-left"></i>&nbsp;
+                    {{ message.formatted_message }}  &nbsp; <em>-- Sender </em>&nbsp;
+                    <i class="fa fa-quote-right"></i>
+                </p>
+            {% endfor %}
+        </div>
     </div>
 
     <h1 id="suggestion"> Submit a great idea? </h1>
