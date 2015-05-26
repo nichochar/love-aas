@@ -16,7 +16,7 @@
     </p>
     <h1>Spread the Love Now</h1>
     <p>
-        <a href="/create">Click here to get started</a>
+    <a href="/create"><i class="fa fa-heart"></i> Click here to get started</a>
         <br>
         You can also click on create next to any of the <a href="#api">API endpoints</a> below.
         <br>
@@ -29,7 +29,7 @@
                 {% if message.to_user_exists %}
                 <h2><a class="mono" href="/create/{{ message.key }}">/{{ message.key }}/Recipient/Sender</a></h2>
                 {% else %}
-                    <h2 class="mono">/{{ message.key }}/Sender</h2>
+                <h2><a  class="mono" href="/create/{{ message.key }}">/{{ message.key }}/Sender</a></h2>
                 {% endif %}
                 <p> <i class="fa fa-quote-left"></i>&nbsp;
                     {{ message.formatted_message }}  &nbsp; <em>-- Sender </em>&nbsp;
