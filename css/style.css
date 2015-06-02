@@ -46,8 +46,8 @@ a:hover {
     text-align: center;
     float: right;
     font: 1.5em Times;
-    padding: 10px 15em 50px 100px;
-    width: 20em;
+    padding: 10px 15em 50px 80px;
+    width: 17em;
 }
 
 #version {
@@ -106,10 +106,10 @@ a:hover {
 }
 
 .bottom-right {
-  float:right;
-  position:absolute;
-  bottom:10%;
-  right:60px;
+  float: right;
+  position: absolute;
+  bottom: 5%;
+  right: 60px;
 }
 
 .mono {
@@ -160,6 +160,7 @@ a.mono:hover {
     font-family: Times;
     height: 3.5em;
     width: 10em;
+    font-style: italic;
 }
 
 #create-list {
@@ -245,8 +246,24 @@ a.mono:hover {
     transform: rotate(180deg);
 }
 
-@media (max-width: 1000px) {
+@media (min-width: 1000px) and (max-width: 1500px) {
+    #banner-float-right {
+        padding: 10px 7em 50px 80px;
+        width: 13em;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1000px) {
+    #banner-float-right {
+        padding: 20px 2em 50px 80px;
+        font-size: 1em;
+        width: 13em;
+    }
+}
+
+@media (max-width:800px) {
     #banner-float-right {
         display: none;
     }
 }
+
