@@ -7,6 +7,16 @@ routes = [
         name='home'
     ),
     webapp2.Route(
+        r'/404',
+        handler='api.handlers.Handler404',
+        name='404'
+    ),
+    webapp2.Route(
+        r'/500',
+        handler='api.handlers.Handler500',
+        name='500'
+    ),
+    webapp2.Route(
         r'/create/<key:(\w+)>',
         handler='api.handlers.Create',
         name='create1'
