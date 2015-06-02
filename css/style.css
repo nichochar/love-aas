@@ -12,7 +12,7 @@ a {
 }
 
 a:hover {
-  color:#00693F;
+  color: #00693F;
 }
 
 #hearts {
@@ -40,6 +40,14 @@ a:hover {
 
 #title h2 {
   font-size:2em;
+}
+
+#banner-float-right {
+    text-align: center;
+    float: right;
+    font: 1.5em Times;
+    padding: 10px 15em 50px 100px;
+    width: 20em;
 }
 
 #version {
@@ -173,4 +181,70 @@ a.mono:hover {
 
 .align-left {
     float: left;
+}
+
+#heart-button {
+    margin: 0 auto;
+}
+
+#heart-button .bb-year-end-ribbon,
+#heart-button .bb-year-end-ribbon:before,
+#heart-button .bb-year-end-ribbon:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#heart-button .bb-year-end-ribbon {
+  background: #04AC68;
+  position: relative;
+  display: inline-block;
+  padding: .5em 1em;
+  text-align: center;
+  text-transform: uppercase;
+  transition-duration: 0.3s;
+}
+
+#heart-button a {
+    color: #FFF;
+    font-family: Times;
+    font-weight: 200;
+}
+
+#heart-button .bb-year-end-ribbon:hover {
+    background: #00693F;
+    cursor: pointer;
+}
+
+#heart-button .bb-year-end-ribbon:before, #heart-button .bb-year-end-ribbon:after {
+    background: #00693F;
+    position: absolute;
+    top: .3em;
+    content: ' ';
+    height: 0;
+    border: 1.05em solid rgba(0, 0, 0, 0);
+    border-left: .9em solid #F5DAEB;
+    transition-duration: 0.3s;
+}
+#heart-button .bb-year-end-ribbon:before {
+    left:  -1.85em;
+}
+#heart-button .bb-year-end-ribbon:after {
+    right: -1.85em;
+    transform: rotate(180deg);
+}
+#heart-button .bb-year-end-ribbon:hover:before{
+    top: -0.3em;
+    background: #04Ac68;
+}
+#heart-button .bb-year-end-ribbon:hover:after{
+    top: -0.3em;
+    background: #04Ac68;
+    transform: rotate(180deg);
+}
+
+@media (max-width: 1000px) {
+    #banner-float-right {
+        display: none;
+    }
 }

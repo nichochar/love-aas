@@ -6,8 +6,7 @@
     <table>
     {% for key in messages %}
     <tr>
-        <td><i class="fa fa-heart"></i></td>
-        <td><i class="fa fa-heart-o"></i></td>
+        <td><i class="{{ loop.cycle('fa fa-heart', 'fa fa-heart-o') }}"></i></td>
         <td><a class="mono align-left" href="/create/{{key}}">{{key}}</a></td>
     </tr>
     {% endfor %}
