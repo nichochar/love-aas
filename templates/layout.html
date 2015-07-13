@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>{% block title %}Love As A Service{% endblock %}</title>
+    <meta name="description" content="Love As A Service (LOVEaas) provides a scalable, RESTful API to spread the love around the world.">
+    <meta name='keywords' content='love as a service love api loveaas love-aas laas love-as-a-service spread love'>
+
+    {% block metatags %}
+        <!-- twitter cards -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="nichochar" />
+        <meta name="twitter:creator" content="nichochar" />
+        <meta name="twitter:title" content="Spread the Love with Love as a Service!" />
+        <meta name="twitter:description" content="You can also spread the Love! Come and visit http://loveaas.com" />
+        <meta name="twitter:image" content="http://loveaas.com/images/logo.png" />
+
+        <!-- Facebook Cards -->
+        <meta property="og:url"                content="http://loveaas.com" />
+        <meta property="og:type"               content="article" />
+        <meta property="og:title"              content="Spread the love!" />
+        <meta property="og:description"        content="There is no reason to not spread love everywhere!" />
+        <meta property="og:image"              content="http://loveaas.com/images/facebook.png" />
+    {% endblock %}
+
+    <!-- Stylesheets -->
+   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+   <!--Analytics-->
+   <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-46204952-1', 'loveaas.com');
+    ga('send', 'pageview');
+  </script>
+  {% block scripts %}{% endblock %}
+  </head>
+  <body>
+  <div id="content">
+      {% block content %}{% endblock %}
+  </div>
+  <div id="footer">
+      {% block footer %}{% endblock %}
+  </div>
+  </body>
+</html>

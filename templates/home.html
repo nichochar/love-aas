@@ -1,83 +1,70 @@
-<html>
-  <head>
-  <title>Love As A Service</title>
-  <meta name="description" content="Love As A Service (LOVEaas) provides a scalable, RESTful API to spread the love around the world.">
-  <meta name='keywords' content='love as a service love api loveaas love-aas laas love-as-a-service spread love'>
-   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-   <!--Analytics-->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+{% extends 'layout.html' %}
 
-    ga('create', 'UA-46204952-1', 'loveaas.com');
-    ga('send', 'pageview');
-
-  </script>
-  </head>
-  <div id="title">
+{% block content %}
+<div id="title">
+    <p id="banner-float-right"><i>An easy way to share your thoughts with the ones you love</i></p>
     <h1>LOVE-AAS</h1>
     <h2>Love As A Service</h2>
-    <p id="version"> v0.2</p>
-  </div>
-  <div id="hearts">
-  <i class="fa fa-heart fa-5x"></i>
-  <i class="fa fa-heart-o fa-5x"></i>
-  </div>
-  <div id="main-body">
+    <p id="version"> v{{ app_version }}</p>
+</div>
+<div id="hearts">
+    <i class="fa fa-heart fa-5x"></i>
+    <i class="fa fa-heart-o fa-5x"></i>
+</div>
+<div id="main-body">
+    <center>
+        <div id="heart-button">
+            <h2 class="bb-year-end-ribbon"> <a href="/create">Spread the Love now!</a></h2>
+        </div>
+    </center>
     <h1>Introduction</h1>
-    <p> LOVE-aas (Love As A Service) provides a modern, RESTful, scalable solution to the common problem spreading the love.
-    <br> If you're unsure about stuff, but still want to spread the love, try the <a href="#hiw">how it works section</a>, or maybe the <a href="#examples">examples</a> will help!
+    <p> Love As A Service allows you to simply send messages to the ones you love.<br>
+    Spreading the love has never been this easy!
     </p>
-    <h1>How it works</h1>
-    <p>Just type in your url bar any combination of the API keywords and then chose names</p>
-    <p>For example if <b>Julie</b> wants to send a crush message to <b>John</b>: just send him <b>http://loveaas.com/crush/John/Julie !</b></p>
-    <h1>API</h1>
-    <h2>/love/:to/:from</h2>
-    <p> Will return content in the form <em>Hi :to, I love you. --:from</em></p>
-    <h2>/crush/:to/:from</h2>
-    <p> Will return content in the form <em>I can't keep it in anymore, :to. I have a HUGE crush on you! --:from</em></p>
-    <h2>/thanksgiving/:to/:from</h2>
-    <p> Will return content in the form <em>Happy Thanksgiving, :to --:from</em></p>
-    <h2>/snapchat/:to/:from</h2>
-    <p> Will return content in the form <em>Hi :to, In the name of love, snapchat me! --:from</em></p>
-    <h2>/miss/:to/:from</h2>
-    <p> Will return content in the form <em>Hi :to, I miss you, so much. --:from</em></p>
-    <h2>/like/:to/:from</h2>
-    <p> Will return content in the form <em>Hi :to, I like you, like a lot. --:from</em></p>
-    <h2>/everyone/:from</h2>
-    <p> Will return content in the form <em>I love everyone! --:from</em></p>
-    <h2>/thank/:what/:from</h2>
-    <p> Will return content in the form <em>Thank you for :what. --:from</em></p>
-    <h2>/request/:to/:from</h2>
-    <p> Will return content in the form <em>Hey :to, do you love me!? --:from</em></p>
-    <h2>/reply/:to/:from</h2>
-    <p> Will return content in the form <em>I love you too :to! --:from</em></p>
-    <h2>/kiss/:to/:from</h2>
-    <p> Will return content in the form <em>I want to kiss you all over! I'm so into smooching with you, :to --:from</em></p>
-    <h2>/cuddle/:to/:from</h2>
-    <p> Will return content in the form <em>I want to cuddle with you so bad, :to --:from</em></p>
-    <h2>/owe/:to/:from</h2>
-    <p> Will return content in the form <em>I owe you one :to --:from</em></p>
-     
+    <h1>Spread the Love Now</h1>
+    <p>
+    Click the big green ribbon, or
+        <br>
+        You can also click on create next to any of the <a href="#api">API endpoints</a> below.
+        <br>
+    <div>
+        <h1 id="api">API</h1>
+        <p> All urls begin with <span class="mono"> http://loveaas.com</span>
+        <br>Click on any of the available endpoints below:</p>
+        <div id="api-list">
+            {% for message in message_list %}
+                {% if message.to_user_exists %}
+                <h2><a class="mono" href="/create/{{ message.key }}">/{{ message.key }}/Recipient/Sender</a></h2>
+                {% else %}
+                <h2><a  class="mono" href="/create/{{ message.key }}">/{{ message.key }}/Sender</a></h2>
+                {% endif %}
+                <p> <i class="fa fa-quote-left"></i> &nbsp; 
+                    {{ message.formatted_message }}  &nbsp; <em>-- Sender </em>&nbsp;
+                    <i class="fa fa-quote-right"></i>
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+
     <h1 id="suggestion"> Submit a great idea? </h1>
-    <p>Don't hesitate single second, <a href="mailto:nicholas@loveaas.com?subject=New Call Idea!">submit your idea of a loving message!</a></p>
+    <p>Don't hesitate a single second, <a href="https://github.com/nichochar/love-aas/issues/13">submit your idea of a loving message!</a></p>
 
     <h1 id="examples"> Examples</h1>
     <p>
-    <a href="http://love-aas.appspot.com/love/santa/elf">Love</a><br>
-    <a href="http://love-aas.appspot.com/crush/Jennifer/Nick">Crush</a><br>
-    <a href="http://love-aas.appspot.com/thanksgiving/America/Europe">Thanksgiving</a><br>
-    <a href="http://love-aas.appspot.com/request/Rose/Jack">Request</a></br>
+    <a href="/love/santa/elf">Infinite arctic love</a><br>
+    <a href="/crush/Jennifer/Nick">A hunger games phenomena</a><br>
+    <a href="/thanksgiving/America/Europe">An intercontinental love message!</a><br>
+    <a href="/request/Rose/Jack">A Final request before drowning</a></br>
+    <a href="/miss/sexual%20life/Long%20Distance%20Relationship%20Victim">Missing sexual life</a></br>
     </p>
 
     <h1>About</h1>
-    <p>Love As A Service was build out of love, as an answer to the <a href="http://foaas.com">Fuck Off As A Service Project</a></p>
-    <p>Created by <a href="http://nicholas.charriere.com">Nicholas Charriere</a></p>
-    <p>All contributions welcome, fork me on <a href="https://github.com/nichochar/love-aas">github</a>.
-    
-  </div>
-  </body>
-</html>
+    <p>
+        Love As A Service was built out of love, as an answer to the <a href="http://foaas.com">Fuck Off As A Service Project</a>
+        <br>
+        Created by <a href="http://nicholas.charriere.com">Nicholas Charriere</a>
+        <br>
+        All contributions welcome, fork me on <a href="https://github.com/nichochar/love-aas">github</a>
+    </p>
+</div>
+{% endblock %}

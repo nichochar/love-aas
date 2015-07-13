@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div id="create-list">
+    <h1> Select your Love Message </h1>
+    <p id="create-list">
+    <table>
+    {% for key in messages %}
+    <tr>
+        <td><i class="{{ loop.cycle('fa fa-heart', 'fa fa-heart-o') }}"></i></td>
+        <td><a class="mono align-left" href="/create/{{key}}">{{key}}</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+    </p>
+</div>
+{% endblock %}

@@ -2,16 +2,17 @@ body {
   margin: 0px 40px;
   padding:20px 10px;
   background-color: #F5DAEB;
-  font: 1em "PT Sans", Helvetica, "Lucida Grande", Arial;
+  font: 1.1em Helvetica, Futura, "PT Sans", Helvetica, "Lucida Grande", Arial;
 }
 
 a {
-  color:#443799;
+  color: #04AC68;
   font-weight:bold;
+  text-decoration: none
 }
 
 a:hover {
-  color:#4B466E;
+  color: #00693F;
 }
 
 #hearts {
@@ -27,54 +28,72 @@ a:hover {
   border-radius: 8px;
 }
 
-#title h1, #title h2{
-  padding:0px 20px;
-  margin:0px 20px;
-  height:60px;
+#title h1, #title h2 {
+  padding: 0px 20px;
+  margin: 0px 20px;
+  height: 60px;
 }
 
-#title h1{
-  font-size:3em;
+#title h1 {
+  font-size: 3.5em;
 }
 
-#title h2{
+#title h2 {
   font-size:2em;
+}
+
+#banner-float-right {
+    text-align: center;
+    float: right;
+    font: 1.5em Times;
+    padding: 10px 15em 50px 80px;
+    width: 17em;
 }
 
 #version {
   padding-left: 40px;
   font: 0.8em "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-style:italic;
-  font-weight:normal;
+  font-style: italic;
+  font-weight: normal;
 }
 
-#main-body {
+#main-body, #create-body {
   margin: 20px;
   color: #E30544;
 }
 
-#main-body h1{
-  font-size:2em;
+#main-body h1, #create-body h1 {
+  font-size: 2.2em;
+  margin-top: 0.9em;
+  margin-bottom: 0.2em;
 }
 
-#main-body h2{
-  font-size:1.5em;
-  padding-left:0;
-  margin-left:0;
+#main-body h2, #create-body h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
-#main-body p {
-  margin-top:0;
-  margin-bottom:0;
+#main-body p, #create-body p {
   color:#000000;
+  line-height: 1.5;
+  margin: 0;
+}
+
+#api-list {
+    margin-top: 2em
+}
+
+#api-list p {
+    margin: 1em;
+    margin-left: 2em;
 }
 
 
 #message {
   background-color:#E30544;
   color: #F5DAEB;
-  padding:40px 40px;
-  font-size: 3em;
+  padding:35px;
+  font-size: 2.7em;
   font-weight:bold;
   border-radius: 8px;
 }
@@ -83,11 +102,168 @@ a:hover {
   padding:0px 40px;
   font-size:2em;
   font-style:italic;
+  font-weight: 100;
 }
 
 .bottom-right {
-  float:right;
-  position:absolute;
-  bottom:10%;
-  right:60px;
+  float: right;
+  position: absolute;
+  bottom: 5%;
+  right: 60px;
 }
+
+.mono {
+  color:#E30544;
+  background-color: #FDF5FA;
+  display: inline; /* so the border doesn't become block */
+  font-family: 'Courier New', Courier;
+  border: 1px solid #E6B4D3;
+  border-radius: 0.3em;
+  font-weight: 100;
+  padding: 0.1em 0.4em;
+}
+
+a.mono:hover {
+    color: #FDF5FA;
+    background-color: #E30544;
+    border: 1px solid #FDF5FA;
+}
+
+#create-h1 {
+    color: #1c1e10;
+    font-size: 2.7em;
+    text-align: center;
+    font-family: Times;
+    font-style: italic;
+}
+
+.create input {
+    color: #E30544;
+    background-color: #FDF5FA;
+    height: 2em;
+    width: 6em;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 3px;
+    text-align: center;
+    padding: 0.3em;
+    transition: border 0.3s;
+}
+
+.create input[type="text"]:focus,
+.create input[type="text"].focus {
+  border: solid 9px #34495e;
+}
+
+#submit-love {
+    font-size: 1.6em;
+    font-family: Times;
+    height: 3.5em;
+    width: 10em;
+    font-style: italic;
+}
+
+#create-list {
+    text-align: center;
+}
+
+#create-list table {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#create-list table td{
+    padding: 7px;
+    font-size: 2em;
+}
+
+#create-list h1 {
+    font-size: 3em;
+    color: #E30544;
+}
+
+.align-left {
+    float: left;
+}
+
+#heart-button {
+    margin: 0 auto;
+}
+
+#heart-button .bb-year-end-ribbon,
+#heart-button .bb-year-end-ribbon:before,
+#heart-button .bb-year-end-ribbon:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#heart-button .bb-year-end-ribbon {
+  background: #04AC68;
+  position: relative;
+  display: inline-block;
+  padding: .5em 1em;
+  text-align: center;
+  text-transform: uppercase;
+  transition-duration: 0.3s;
+}
+
+#heart-button a {
+    color: #FFF;
+    font-family: Times;
+    font-weight: 200;
+}
+
+#heart-button .bb-year-end-ribbon:hover {
+    background: #00693F;
+    cursor: pointer;
+}
+
+#heart-button .bb-year-end-ribbon:before, #heart-button .bb-year-end-ribbon:after {
+    background: #00693F;
+    position: absolute;
+    top: .3em;
+    content: ' ';
+    height: 0;
+    border: 1.05em solid rgba(0, 0, 0, 0);
+    border-left: .9em solid #F5DAEB;
+    transition-duration: 0.3s;
+}
+#heart-button .bb-year-end-ribbon:before {
+    left:  -1.85em;
+}
+#heart-button .bb-year-end-ribbon:after {
+    right: -1.85em;
+    transform: rotate(180deg);
+}
+#heart-button .bb-year-end-ribbon:hover:before{
+    top: -0.3em;
+    background: #04Ac68;
+}
+#heart-button .bb-year-end-ribbon:hover:after{
+    top: -0.3em;
+    background: #04Ac68;
+    transform: rotate(180deg);
+}
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+    #banner-float-right {
+        padding: 10px 7em 50px 80px;
+        width: 13em;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1000px) {
+    #banner-float-right {
+        padding: 20px 2em 50px 80px;
+        font-size: 1em;
+        width: 13em;
+    }
+}
+
+@media (max-width:800px) {
+    #banner-float-right {
+        display: none;
+    }
+}
+
