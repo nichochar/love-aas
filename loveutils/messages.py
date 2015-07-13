@@ -12,10 +12,6 @@ MESSAGES = {
     "reply": "I love you too {to_user}!",
     "kiss": "I want to kiss you all over! I'm so into smooching with you, {to_user}!",
     "cuddle": "I want to cuddle with you so bad, {to_user} ",
-<<<<<<< HEAD
     "owe": "I owe you one {to_user} ",
     "birthday": "Happy Birthday {to_user}!",
-=======
-    "owe": "I owe you one {to_user} "
->>>>>>> master
 }
