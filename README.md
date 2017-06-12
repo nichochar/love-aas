@@ -8,7 +8,8 @@ http://loveaas.com/everyone/LoveMaster
 Introduction
 ============
 LOVEaas (Love As A Service) provides a modern, RESTful, scalable solution to the common problem spreading the love.
- If you're unsure about stuff, but still want to spread the love, maybe the examples will help!
+ If you're unsure about stuff, maybe the examples will help!
+ 
 API
 ===
 ```
@@ -89,4 +90,4 @@ Examples
  - [Love](http://love-aas.appspot.com/love/santa/elf)
  - [Crush](http://love-aas.appspot.com/crush/Jennifer/Nick)
  - [Thanksgiving](http://love-aas.appspot.com/thanksgiving/America/Europe)
- - [Request](a href="http://love-aas.appspot.com/request/Rose/Jack)
+ - [Request](http://love-aas.appspot.com/request/Rose/Jack)
