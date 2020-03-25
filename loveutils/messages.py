@@ -3,7 +3,7 @@ MESSAGES = {
     "xmas": "A very merry Christmas, {to_user} ",
     "crush": "I can't keep it in anymore, {to_user}. I have a HUGE crush on you!",
     "thanksgiving": "Happy Thanksgiving, {to_user}!",
-    "snapchat": "Hi {to_user}, int he name of love, snapchat me!",
+    "snapchat": "Hi {to_user}, in the name of love, snapchat me!",
     "miss": "Hi {to_user}, I miss you, so much.",
     "like": "Hi {to_user}, I like you, like a lot.",
     "everyone": "I love everyone!",
